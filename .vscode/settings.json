@@ -1,0 +1,126 @@
+{
+    // --- 저장 시 자동 실행 ---
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit",
+        "source.fixAll": "explicit"
+    },
+    "editor.formatOnSaveMode": "file",
+    // --- Python 포매터 ---
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "diffEditor.ignoreTrimWhitespace": false,
+        "editor.defaultColorDecorators": "never",
+        "gitlens.codeLens.symbolScopes": [
+            "!Module"
+        ],
+        "editor.formatOnType": true,
+        "editor.wordBasedSuggestions": "off",
+        "editor.inlayHints.enabled": "on"
+    },
+    "python.formatting.provider": "none",
+    // --- 린팅(Ruff 권장) ---
+    "python.linting.enabled": true,
+    "python.linting.ruffEnabled": true,
+    "python.linting.ruffPath": "C:\\Users\\addmin\\venvs\\pytepod\\Scripts\\ruff.exe",
+    "python.linting.flake8Enabled": false,
+    "python.linting.lintOnSave": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.pycodestyleEnabled": false,
+    // --- 타입 체크 ---
+    "python.analysis.typeCheckingMode": "off",
+    "python.analysis.diagnosticSeverityOverrides": {
+        "pyright.reportGeneralTypeIssues": "information",
+        "pylance.reportInvalidTypeForm": "warning",
+        "pylance.reportLinesTooLong": "none",
+        "pyright.reportImportCycles": "warning"
+    },
+    // --- 인터프리터/venv ---
+    "python.defaultInterpreterPath": "C:\\Users\\addmin\\venvs\\pytepod\\Scripts\\python.exe",
+    "python.venvPath": "C:\\Users\\addmin\\venvs",
+    "python.terminal.activateEnvironment": true,
+    // --- 터미널 프로파일 ---
+    "terminal.integrated.profiles.windows": {
+        "pytepod-pwsh": {
+            "path": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+            "args": [
+                "-NoExit",
+                "-NoLogo",
+                "-NoProfile",
+                "-ExecutionPolicy",
+                "Bypass",
+                "-Command",
+                "& 'C:\\Users\\addmin\\venvs\\pytepod\\Scripts\\Activate.ps1'; if ($?) { Write-Host 'pytepod activated' }"
+            ],
+            "icon": "terminal-powershell"
+        },
+        "pytepod-cmd": {
+            "path": "C:\\Windows\\System32\\cmd.exe",
+            "args": [
+                "/k",
+                "C:\\Users\\addmin\\venvs\\pytepod\\Scripts\\activate.bat"
+            ],
+            "icon": "terminal-cmd"
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "pytepod-pwsh",
+    // --- Git (개인용 설정) ---
+    "git.autofetch": true,
+    "git.pullBeforeCheckout": true,
+    "git.rebaseWhenSync": true,
+    // --- 파일/탐색 ---
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.pytest_cache": true,
+        "**/.venv": true,
+        "result": true,
+        "back": true
+    },
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree/**": true,
+        "**/node_modules/**": true
+    },
+    "search.exclude": {
+        "**/dist": true,
+        "**/build": true
+    },
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    // --- 에디터 품질 ---
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.detectIndentation": false,
+    "editor.rulers": [
+        88
+    ],
+    "editor.renderWhitespace": "boundary",
+    "editor.renderControlCharacters": true,
+    // --- Copilot (사용 안 함 설정) ---
+    "github.copilot.nextEditSuggestions.enabled": false, // Copilot 제안 끄기
+    "editor.inlineSuggest.enabled": false, // 회색 미리보기 텍스트(Ghost Text) 끄기
+    "editor.suggest.preview": true, // (일반 자동완성 미리보기는 유지)
+    // --- Markdownlint ---
+    "markdownlint.config": {
+        "default": true,
+        "MD001": false,
+        "MD002": false,
+        "MD003": false,
+        "MD004": false,
+        "MD007": false,
+        "MD009": false,
+        "MD010": false,
+        "MD012": false,
+        "MD013": false,
+        "MD022": false,
+        "MD023": false,
+        "MD025": false,
+        "MD026": false,
+        "MD029": false,
+        "MD032": false,
+        "MD033": false,
+        "MD041": false
+    },
+    "python-envs.pythonProjects": []
+}
