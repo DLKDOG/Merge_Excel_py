@@ -1,0 +1,79 @@
+2026-02-07 14:04:42,590 - INFO - Logging setup complete.
+2026-02-07 14:04:42,591 - INFO - Logging setup complete.
+2026-02-07 14:04:42,591 - INFO - Program started.
+2026-02-07 14:04:42,591 - INFO - 병합할 엑셀 파일들을 선택하세요 / Select Excel files to merge
+2026-02-07 14:05:25,395 - INFO - Logging setup complete.
+2026-02-07 14:05:25,396 - INFO - Program started.
+2026-02-07 14:24:35,127 - INFO - System Initialized.
+2026-02-07 14:26:37,679 - INFO - System Initialized.
+2026-02-07 14:29:46,765 - INFO - Logging setup complete.
+2026-02-07 14:29:46,765 - INFO - Logging setup complete.
+2026-02-07 14:29:46,766 - INFO - Program started.
+2026-02-07 14:29:46,766 - INFO - 병합할 엑셀 파일들을 선택하세요 / Select Excel files to merge
+2026-02-07 14:30:04,459 - INFO - Selected files: ('C:/Github/sample_excels/test_data_1.xlsx', 'C:/Github/sample_excels/test_data_2.xlsx', 'C:/Github/sample_excels/test_data_3_missing_date.xlsx')
+2026-02-07 14:30:04,459 - INFO - 대상 폴더를 선택하세요 / Select destination folder
+2026-02-07 14:30:10,364 - INFO - Selected folder: C:/Github
+2026-02-07 14:30:16,788 - INFO - Selected sort criteria: Line
+2026-02-07 14:30:22,795 - INFO - Starting to merge files based on Line...
+2026-02-07 14:30:22,796 - INFO - Processing file: C:/Github/sample_excels/test_data_1.xlsx
+2026-02-07 14:30:22,800 - INFO - Reading sheet: Sheet1
+2026-02-07 14:30:22,811 - INFO - Processing file: C:/Github/sample_excels/test_data_2.xlsx
+2026-02-07 14:30:22,814 - INFO - Reading sheet: Valid_Data
+2026-02-07 14:30:22,819 - INFO - Reading sheet: Invalid_Sheet
+2026-02-07 14:30:22,823 - INFO - Excluding sheet: Invalid_Sheet because it does not contain 'Line' or data is not numeric
+2026-02-07 14:30:22,823 - INFO - Processing file: C:/Github/sample_excels/test_data_3_missing_date.xlsx
+2026-02-07 14:30:22,826 - INFO - Reading sheet: Sheet1
+2026-02-07 14:30:22,922 - INFO - Saved merged file to: C:/Github\merged_file_1.xlsx
+2026-02-07 14:30:22,922 - INFO - Reloading merged file for sorting by Line...
+2026-02-07 14:30:22,948 - INFO - Saved sorted file to: C:/Github\merged_file_2.xlsx
+2026-02-07 14:30:22,948 - INFO - Adding chart to Excel file...
+2026-02-07 14:30:22,948 - INFO - Loading workbook: C:/Github\merged_file_2.xlsx
+2026-02-07 14:30:22,955 - INFO - Creating scatter chart...
+2026-02-07 14:30:22,955 - INFO - Setting chart data...
+2026-02-07 14:30:22,956 - INFO - Adding chart to new sheet...
+2026-02-07 14:30:22,956 - INFO - Saving workbook: C:/Github\merged_file_2.xlsx
+2026-02-07 14:30:22,970 - INFO - Creating dynamic chart from merged file...
+2026-02-07 14:30:22,970 - INFO - Loading merged Excel file based on Line: C:/Github\merged_file_1.xlsx
+2026-02-07 14:30:27,654 - INFO - Dynamic chart file saved: C:/Github\merged_file_line_chart.html
+2026-02-07 14:30:27,792 - INFO - Dynamic chart file (sorted) saved: C:/Github\merged_file_sorted_chart.html
+2026-02-07 14:30:27,794 - INFO - Final merged and sorted file saved: C:/Github\merged_file_2.xlsx
+2026-02-07 14:30:27,794 - INFO - Dynamic chart saved: None
+2026-02-07 14:31:46,341 - INFO - Logging setup complete.
+2026-02-07 14:31:46,341 - INFO - Program started.
+2026-02-07 14:32:03,084 - INFO - Processing file: C:/Github/sample_excels/test_data_1.xlsx
+2026-02-07 14:32:03,090 - INFO - Processing file: C:/Github/sample_excels/test_data_2.xlsx
+2026-02-07 14:32:03,096 - INFO - Excluded sheet: Invalid_Sheet in test_data_2.xlsx (missing numeric 'Line')
+2026-02-07 14:32:03,096 - INFO - Processing file: C:/Github/sample_excels/test_data_3_missing_date.xlsx
+2026-02-07 14:32:03,140 - INFO - Saved merged file: C:/Github\merged_file_1.xlsx
+2026-02-07 14:32:03,160 - INFO - Saved sorted file: C:/Github\merged_file_2.xlsx
+2026-02-07 14:32:03,160 - INFO - Loading workbook for chart: C:/Github\merged_file_2.xlsx
+2026-02-07 14:32:03,176 - INFO - Chart added and workbook saved: C:/Github\merged_file_2.xlsx
+2026-02-07 14:32:03,641 - INFO - Saved dynamic line chart: C:/Github\merged_file_line_chart.html
+2026-02-07 14:32:03,755 - INFO - Saved dynamic sorted chart: C:/Github\merged_file_sorted_chart.html
+2026-02-07 14:33:11,818 - INFO - System Initialized.
+2026-02-07 14:35:48,490 - INFO - System Initialized.
+2026-02-07 14:36:23,226 - INFO - System Initialized.
+2026-02-08 15:31:18,686 - INFO - Logging setup complete.
+2026-02-08 15:31:18,687 - INFO - Program started.
+2026-02-08 15:31:35,754 - INFO - Processing file: C:/Github/sample_excels/test_data_1.xlsx
+2026-02-08 15:31:35,773 - INFO - Processing file: C:/Github/sample_excels/test_data_2.xlsx
+2026-02-08 15:31:35,782 - INFO - Excluded sheet: Invalid_Sheet in test_data_2.xlsx (missing numeric 'Line')
+2026-02-08 15:31:35,899 - INFO - Saved merged file: C:/Github\merged_file_1.xlsx
+2026-02-08 15:31:35,915 - INFO - Saved sorted file: C:/Github\merged_file_2.xlsx
+2026-02-08 15:31:35,915 - INFO - Loading workbook for chart: C:/Github\merged_file_2.xlsx
+2026-02-08 15:31:35,927 - INFO - Chart added and workbook saved: C:/Github\merged_file_2.xlsx
+2026-02-08 15:31:40,628 - INFO - Saved dynamic line chart: C:/Github\merged_file_line_chart.html
+2026-02-08 15:31:40,753 - INFO - Saved dynamic sorted chart: C:/Github\merged_file_sorted_chart.html
+2026-02-08 15:33:02,481 - INFO - Logging setup complete.
+2026-02-08 15:33:02,481 - INFO - Program started.
+2026-02-08 15:33:21,534 - INFO - Processing file: C:/Github/sample_excels/test_data_1.xlsx
+2026-02-08 15:33:21,540 - INFO - Processing file: C:/Github/sample_excels/test_data_2.xlsx
+2026-02-08 15:33:21,545 - INFO - Excluded sheet: Invalid_Sheet in test_data_2.xlsx (missing numeric 'Line')
+2026-02-08 15:33:21,545 - INFO - Processing file: C:/Github/sample_excels/test_data_3_missing_date.xlsx
+2026-02-08 15:33:21,584 - INFO - Saved merged file: C:/Github\merged_file_1.xlsx
+2026-02-08 15:33:21,599 - INFO - Saved sorted file: C:/Github\merged_file_2.xlsx
+2026-02-08 15:33:21,599 - INFO - Loading workbook for chart: C:/Github\merged_file_2.xlsx
+2026-02-08 15:33:21,613 - INFO - Chart added and workbook saved: C:/Github\merged_file_2.xlsx
+2026-02-08 15:33:22,026 - INFO - Saved dynamic line chart: C:/Github\merged_file_line_chart.html
+2026-02-08 15:33:22,171 - INFO - Saved dynamic sorted chart: C:/Github\merged_file_sorted_chart.html
+2026-02-15 11:53:31,064 - INFO - System Initialized.

@@ -8,7 +8,7 @@
     "editor.formatOnSaveMode": "file",
     // --- Python 포매터 ---
     "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
+        // "editor.defaultFormatter": "ms-python.black-formatter",
         "diffEditor.ignoreTrimWhitespace": false,
         "editor.defaultColorDecorators": "never",
         "gitlens.codeLens.symbolScopes": [
@@ -21,7 +21,7 @@
     "python.formatting.provider": "none",
     // --- 린팅(Ruff 권장) ---
     "python.linting.enabled": true,
-    "python.linting.ruffEnabled": true,
+    "python.linting.ruffEnabled": false,
     "python.linting.ruffPath": "C:\\Users\\addmin\\venvs\\pytepod\\Scripts\\ruff.exe",
     "python.linting.flake8Enabled": false,
     "python.linting.lintOnSave": true,
@@ -30,6 +30,8 @@
     // --- 타입 체크 ---
     "python.analysis.typeCheckingMode": "off",
     "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingImports": "none",
+        "reportMissingModuleSource": "none",
         "pyright.reportGeneralTypeIssues": "information",
         "pylance.reportInvalidTypeForm": "warning",
         "pylance.reportLinesTooLong": "none",
@@ -39,6 +41,9 @@
     "python.defaultInterpreterPath": "C:\\Users\\addmin\\venvs\\pytepod\\Scripts\\python.exe",
     "python.venvPath": "C:\\Users\\addmin\\venvs",
     "python.terminal.activateEnvironment": true,
+    "python.analysis.extraPaths": [
+        "C:\\Users\\addmin\\venvs\\pytepod\\Lib\\site-packages"
+    ],
     // --- 터미널 프로파일 ---
     "terminal.integrated.profiles.windows": {
         "pytepod-pwsh": {

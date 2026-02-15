@@ -1,0 +1,19 @@
+{
+    "source_directories": [
+        "."
+    ],
+    "ignore_all_errors": [
+        "gpt_merge_excel.py",
+        "gem_merge_excel.py"
+    ],
+    "search_path": [
+        "C:/Users/addmin/venvs/pytepod/Lib/site-packages",
+        "C:/Users/addmin/venvs/pytepod/Lib",
+        "C:/Users/addmin/venvs/pytepod"
+    ],
+    "exclude": [
+        "Listing.*",
+        "scripts/.*"
+    ],
+    "python_version": "3.11"
+}

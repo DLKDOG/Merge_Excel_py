@@ -1,6 +1,6 @@
 import os
 import pandas as pd
-import numpy as np 
+import numpy as np
 from tkinter import Tk, filedialog, simpledialog, messagebox, ttk
 import time
 import subprocess
@@ -66,7 +66,7 @@ def add_chart_to_excel(file_path):
         x_values = Reference(ws, min_col=1, min_row=2, max_row=ws.max_row)  # 첫 번째 열을 X축 값으로 설정
         for i in range(2, ws.max_column + 1):
             y_values = Reference(ws, min_col=i, min_row=2, max_row=ws.max_row)  # 나머지 열들을 Y축 값으로 설정
-    
+
             # 차트에 시리즈 추가
             chart.add_data(y_values, titles_from_data=True)
             chart.set_categories(x_values)
@@ -83,7 +83,7 @@ def add_chart_to_excel(file_path):
     except Exception as e:
         logging.error(f"Error adding chart to file {file_path}: {e}")
         print(f"Error adding chart to file {file_path}: {e}")
-        
+
 def plot_and_save_dynamic_graph(all_data, destination_folder, base_name, title, sort_criteria):
     logging.info("Plotting dynamic graph...")
     print("Plotting dynamic graph...")
@@ -141,7 +141,7 @@ def plot_and_save_dynamic_graph(all_data, destination_folder, base_name, title, 
         dynamic_chart_file = os.path.join(destination_folder, f'{base_name}_dynamic_chart.html')
         logging.info(f"Saving dynamic chart to: {dynamic_chart_file}")
         print(f"Saving dynamic chart to: {dynamic_chart_file}")
-        
+
         fig.write_html(dynamic_chart_file)
         fig.show()
 
@@ -174,7 +174,7 @@ def merge_excel_files(source_files, destination_folder, sort_criteria, progress_
                         excluded_sheets.append(f"{sheet_name} in {os.path.basename(file_path)}")
             except Exception as e:
                 logging.error(f"Error processing file {file_path}: {e}")
-            
+
             # Update progress bar
             progress = int((idx / total_steps) * 100)
             progress_bar['value'] = progress
@@ -190,7 +190,7 @@ def merge_excel_files(source_files, destination_folder, sort_criteria, progress_
         result_file = generate_simple_filename(base_name, 1)
         result_file = os.path.join(destination_folder, result_file)
         all_data.to_excel(result_file, index=False)
-        
+
         logging.info(f"Saved merged file to: {result_file}")
 
         # Check if the user-specified sort column exists
@@ -213,7 +213,7 @@ def merge_excel_files(source_files, destination_folder, sort_criteria, progress_
             all_data.to_excel(result_file_sorted, index=False)
 
             logging.info(f"Saved sorted file to: {result_file_sorted}")
-            
+
             # Define chart title here to avoid 'not defined' errors
             chart_title = f"Chart based on {sort_criteria}"
 
@@ -224,7 +224,7 @@ def merge_excel_files(source_files, destination_folder, sort_criteria, progress_
             # Create dynamic chart based on sorted data
             logging.info("Creating dynamic chart from merged file...")
             dynamic_chart_file_sort = plot_from_merged_excel_twice(result_file, result_file_sorted, destination_folder, base_name, chart_title)
-            
+
         else:
             # Column not found, issue a warning
             logging.warning(f"Column {sort_criteria} not found in the data.")
@@ -246,12 +246,12 @@ def merge_excel_files(source_files, destination_folder, sort_criteria, progress_
 def plot_from_merged_excel_twice(line_file_path, sorted_file_path, destination_folder, base_name, title):
     logging.info(f"Loading merged Excel file based on Line: {line_file_path}")
     print(f"Loading merged Excel file based on Line: {line_file_path}")
-    
+
     try:
         line_data = pd.read_excel(line_file_path)
         numeric_columns = line_data.select_dtypes(include='number').columns.tolist()
         x_axis_column = line_data.columns[0]
-        
+
         if 'Line' in numeric_columns:
             numeric_columns.remove('Line')
         if 'Date' in line_data.columns:
@@ -261,10 +261,10 @@ def plot_from_merged_excel_twice(line_file_path, sorted_file_path, destination_f
             right_y_column = None
 
         fig = px.scatter()
-        
+
         for column in numeric_columns:
             fig.add_scatter(x=line_data[x_axis_column], y=line_data[column], mode='lines', name=column, yaxis='y1')
-        
+
         if right_y_column:
             fig.add_scatter(x=line_data[x_axis_column], y=line_data[right_y_column], mode='lines', name='Date', yaxis='y2')
             fig.update_layout(
@@ -279,7 +279,7 @@ def plot_from_merged_excel_twice(line_file_path, sorted_file_path, destination_f
                 xaxis=dict(title=x_axis_column),
                 yaxis=dict(title="Numeric Values")
             )
-        
+
         dynamic_chart_file_line = os.path.join(destination_folder, f'{base_name}_line_chart.html')
         fig.write_html(dynamic_chart_file_line)
         fig.show()
@@ -294,7 +294,7 @@ def plot_from_merged_excel_twice(line_file_path, sorted_file_path, destination_f
         sorted_data = pd.read_excel(sorted_file_path)
         numeric_columns = sorted_data.select_dtypes(include='number').columns.tolist()
         x_axis_column = sorted_data.columns[0]
-        
+
         if 'Line' in numeric_columns:
             numeric_columns.remove('Line')
         if 'Date' in sorted_data.columns:
@@ -304,10 +304,10 @@ def plot_from_merged_excel_twice(line_file_path, sorted_file_path, destination_f
             right_y_column = None
 
         fig = px.scatter()
-        
+
         for column in numeric_columns:
             fig.add_scatter(x=sorted_data[x_axis_column], y=sorted_data[column], mode='lines', name=column, yaxis='y1')
-        
+
         if right_y_column:
             fig.add_scatter(x=sorted_data[x_axis_column], y=sorted_data[right_y_column], mode='lines', name='Date', yaxis='y2')
             fig.update_layout(
@@ -336,7 +336,7 @@ def plot_from_merged_excel_twice(line_file_path, sorted_file_path, destination_f
 def plot_and_save_dual_axis_graph(all_data, destination_folder, base_name, title):
     logging.info("Plotting dual-axis graph with Date on the right Y-axis...")
     print("Plotting dual-axis graph with Date on the right Y-axis...")
-    
+
     try:
         fig = px.scatter()
 
@@ -360,7 +360,7 @@ def plot_and_save_dual_axis_graph(all_data, destination_folder, base_name, title
         dynamic_chart_file = os.path.join(destination_folder, f'{base_name}_dual_axis_chart.html')
         logging.info(f"Saving dual-axis chart to: {dynamic_chart_file}")
         print(f"Saving dual-axis chart to: {dynamic_chart_file}")
-        
+
         fig.write_html(dynamic_chart_file)
         fig.show()
 
@@ -427,7 +427,7 @@ setup_logging()
 def main():
     try:
         setup_logging()
-        
+
         logging.info('Program started.')
 
         logging.info('병합할 엑셀 파일들을 선택하세요 / Select Excel files to merge')
@@ -442,7 +442,7 @@ def main():
             logging.error('No files selected.')
             print("No files selected.")
             return
-        
+
         logging.info('대상 폴더를 선택하세요 / Select destination folder')
         print('대상 폴더를 선택하세요 / Select destination folder')
         destination_folder = select_folder('대상 폴더를 선택하세요 / Select destination folder')
@@ -477,7 +477,7 @@ def main():
         run_merge_process(source_files, destination_folder, sort_criteria, progress_bar, progress_label, root)
 
         root.mainloop()
-    
+
     except Exception as e:
         logging.error(f"An error occurred: {str(e)}")
         print(f"An error occurred: {str(e)}")
